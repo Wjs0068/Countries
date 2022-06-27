@@ -1,0 +1,20 @@
+.nav__button {
+  background: none;
+  border: none;
+}
+
+.nav__button__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+}
+.nav__button__container--icon {
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
+}
+.nav__button__container--para {
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
+}
