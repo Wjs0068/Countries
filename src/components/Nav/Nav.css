@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  margin: 0rem 5rem;
+  align-items: center;
+  background-color: white;
+}
+
+.nav__header {
+}
