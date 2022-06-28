@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Countries.css";
 
-function Countries() {
+function Countries({ region }) {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((countries) => {
       setCountries(countries.data);
-      console.log(countries);
     });
-  }, []);
+  }, [region]);
 
   return (
     <div className="list-container">
@@ -28,8 +27,10 @@ function Countries() {
           // names must be equal
           return 0;
         })
+        .filter((countries) => {
+          return countries.region.includes(region);
+        })
         .map((country, index) => {
-          console.log(country);
           return (
             <div className="card-container" key={index}>
               <img
