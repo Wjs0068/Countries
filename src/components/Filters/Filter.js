@@ -8,7 +8,7 @@ function Filter(props) {
   // const [region, setRegion] = useState("none");
   var region;
 
-  const handleChange = async (event) => {
+  const handleChange = (event) => {
     console.log(event.target.value);
     region = event.target.value;
     props.onSaveRegion(region);
