@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "../Reusable/Card.js";
+import "./Countries.css";
 
 function Countries() {
   const [countries, setCountries] = useState([]);
@@ -14,14 +14,45 @@ function Countries() {
 
   return (
     <div className="list-container">
-      {countries.map((country, index) => {
-        console.log(country.name.common);
-        return (
-          <div key={index}>
-            <p>{country.name.common}</p>
-          </div>
-        );
-      })}
+      {countries
+        .sort(function (a, b) {
+          const nameA = a.name.common;
+          const nameB = b.name.common;
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          // names must be equal
+          return 0;
+        })
+        .map((country, index) => {
+          console.log(country);
+          return (
+            <div className="card-container" key={index}>
+              <img
+                className="card-container__image"
+                src={country.flags.png}
+                alt="Pictures of all the country flags"
+              />
+              <h3 className="card-container__name">{country.name.common}</h3>
+              <p className="card-container__population">
+                <span className="card-container__span">Population:</span>
+                {country.population}
+              </p>
+              <p className="card-container__region">
+                <span className="card-container__span">Region:</span>
+                {country.region}
+              </p>
+              <p className="card-container__capital">
+                <span className="card-container__span">Capital:</span>
+                {country.capital}
+              </p>
+            </div>
+          );
+        })}
     </div>
   );
 }

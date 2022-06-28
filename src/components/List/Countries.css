@@ -1,4 +1,67 @@
 .list-container {
   display: grid;
+  row-gap: 5rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-top: 4rem;
+}
+
+.card-container {
+  background-color: white;
+  width: 25rem;
+  height: 28rem;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.52);
+  border-radius: 8px;
+}
+
+.card-container:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 0.3s;
+}
+
+.card-container__image {
+  width: 25rem;
+  height: 16rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-container__name {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  text-align: left;
+  margin-left: 3rem;
+  padding-top: 1rem;
+}
+
+.card-container__population {
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  margin-left: 3rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.2rem;
+  padding-top: 1rem;
+}
+
+.card-container__region {
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  margin-left: 3rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.card-container__capital {
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  margin-left: 3rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.2rem;
+}
+.card-container__span {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  margin-right: 1rem;
 }
