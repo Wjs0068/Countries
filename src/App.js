@@ -4,6 +4,7 @@ import Nav from "./components/Nav/Nav.js";
 import Countries from "./components/List/Countries.js";
 import Filter from "./components/Filters/Filter.js";
 import Search from "./components/Filters/Search.js";
+import Modal from "./components/Modal/Modal.js";
 
 function App() {
   const [region, setRegion] = useState("");
@@ -30,6 +31,7 @@ function App() {
       </div>
 
       <Countries search={search} region={region} />
+      <Modal />
     </div>
   );
 }
