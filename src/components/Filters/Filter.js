@@ -34,9 +34,6 @@ function Filter(props) {
           onChange={handleChange}
           label="Age"
         >
-          <MenuItem value="">
-            <em></em>
-          </MenuItem>
           <MenuItem value="Africa">Africa</MenuItem>
           <MenuItem value="Americas">Americas</MenuItem>
           <MenuItem value="Asia">Asia</MenuItem>

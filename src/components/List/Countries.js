@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Countries.css";
 
-function Countries({ region }) {
+function Countries({ region, search }) {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,11 @@ function Countries({ region }) {
           return 0;
         })
         .filter((countries) => {
-          return countries.region.includes(region);
+          const lowerCase = search.toLowerCase();
+          return (
+            countries.region.includes(region) &&
+            countries.name.common.toLowerCase().includes(lowerCase)
+          );
         })
         .map((country, index) => {
           return (

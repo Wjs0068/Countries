@@ -29,7 +29,7 @@ function App() {
         <Filter onSaveRegion={saveRegionData} />
       </div>
 
-      <Countries region={region} />
+      <Countries search={search} region={region} />
     </div>
   );
 }

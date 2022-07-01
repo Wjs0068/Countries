@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 
-function Search() {
-  const [countrySearch, setCountrySearch] = useState();
+function Search(props) {
+  // const [countrySearch, setCountrySearch] = useState();
+
+  var search;
 
   return (
     <div className="main">
@@ -18,7 +20,8 @@ function Search() {
           fullWidth
           label="Search"
           onChange={(event) => {
-            setCountrySearch(event.target.value);
+            search = event.target.value;
+            props.onSaveSearch(search);
           }}
         />
       </div>
