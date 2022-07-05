@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+
 import Nav from "./components/Nav/Nav.js";
 import Countries from "./components/List/Countries.js";
 import Filter from "./components/Filters/Filter.js";
@@ -32,12 +33,14 @@ function App() {
 
   const openedData = (clickedCountry) => {
     const openData = clickedCountry;
+    document.body.classList.add("modal-open");
     setOpened(openData);
     console.log(openData);
   };
 
   const closedData = (back) => {
     const closeData = back;
+    document.body.classList.remove("modal-open");
     setOpened(back);
     console.log(closeData);
   };
@@ -45,6 +48,8 @@ function App() {
   return (
     <div className="App">
       <Nav />
+
+      {opened ? <Modal onSaveClose={closedData} country={country} /> : <></>}
       <div className="App__filter--container">
         <Search onSaveSearch={saveSearchData} />
         <Filter onSaveRegion={saveRegionData} />
@@ -56,11 +61,6 @@ function App() {
         search={search}
         region={region}
       />
-      {opened ? (
-        <Modal onSaveClose={closedData} country={country} />
-      ) : (
-        <div></div>
-      )}
     </div>
   );
 }

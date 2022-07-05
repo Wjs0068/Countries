@@ -18,7 +18,11 @@ body {
   background-color: #eee;
 }
 
-code {
+body.modal-open {
+  overflow-y: hidden;
+}
+
+body code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
