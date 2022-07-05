@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Countries.css";
-import Modal from "../Modal/Modal.js";
 
-function Countries({ region, search, onSaveCountry }) {
+function Countries({ region, search, onSaveCountry, onSaveOpen }) {
   const [countries, setCountries] = useState([]);
+  const [open, setOpen] = useState(false);
   var chosenCountry;
 
   useEffect(() => {
@@ -44,6 +44,8 @@ function Countries({ region, search, onSaveCountry }) {
                   onClick={() => {
                     chosenCountry = country;
                     onSaveCountry(chosenCountry);
+                    console.log(chosenCountry);
+                    onSaveOpen(true);
                   }}
                   className="card-container"
                   key={index}

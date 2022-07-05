@@ -1,7 +1,35 @@
 .modal-container {
   z-index: 20;
   background-color: #555;
-  height: 20rem;
 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: start;
+  justify-content: center;
   border: 2px solid #000;
+}
+
+.modal-container__back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  gap: 1rem;
+}
+
+.modal-container__back-icon {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.modal-container__back {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.modal-container__img-container {
+}
+
+.modal-container__img {
 }
