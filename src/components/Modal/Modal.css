@@ -10,8 +10,8 @@
 
   align-items: flex-start;
 
-  justify-items: start;
-  justify-content: center;
+  justify-items: left;
+
   padding-left: 8rem;
 }
 
@@ -54,15 +54,25 @@
   height: 30rem;
 }
 
+.modal-container__right-side-container {
+  justify-self: start;
+  align-self: center;
+  margin-bottom: 20rem;
+}
+
 .modal-container__grid-for-elements {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 1rem;
 }
 
 .modal-container__header-three {
   font-size: 2.6rem;
   font-family: "Raleway", sans-serif;
   color: white;
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
 .modal-container__category {
@@ -75,11 +85,35 @@
 .modal-container__description {
   font-family: "Raleway", sans-serif;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .modal-container__paragraph {
   font-family: "Raleway", sans-serif;
-  color: #111;
-  font-size: 1.8rem;
+  color: black;
+  font-size: 1.4rem;
+}
+
+.modal-container__border-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: left;
+  margin-top: 1.4rem;
+  max-width: 40rem;
+}
+
+.modal-container__name-description {
+  font-family: "Raleway", sans-serif;
+  color: white;
+
+  font-size: 1.4rem;
+}
+
+.modal-container__border-name {
+  background-color: #444;
+  font-size: 1.4rem;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  padding: 0.4rem;
 }

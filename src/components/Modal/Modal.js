@@ -15,13 +15,13 @@ function Modal({ country, onSaveClose }) {
         <span className="modal-container__back">Back</span>
       </button>
       <div></div>
-      <div className="modal-container__img-container">
-        <img
-          className="modal-container__img"
-          src={country.flags.png}
-          alt="flag"
-        />
-      </div>
+
+      <img
+        className="modal-container__img"
+        src={country.flags.png}
+        alt="flag"
+      />
+
       <div className="modal-container__right-side-container">
         <h3 className="modal-container__header-three">{country.name.common}</h3>
         <div className="modal-container__grid-for-elements">
@@ -31,25 +31,45 @@ function Modal({ country, onSaveClose }) {
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Population:</span>
-            <p className="modal-container__paragraph">{country.population}</p>
+            {country.population ? (
+              <p className="modal-container__paragraph">{country.population}</p>
+            ) : (
+              <p className="modal-container__paragraph">N/A</p>
+            )}
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Region:</span>
-            <p className="modal-container__paragraph">{country.region}</p>
+            {country.region ? (
+              <p className="modal-container__paragraph">{country.region}</p>
+            ) : (
+              <p className="modal-container__paragraph">N/A</p>
+            )}
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Sub Region:</span>
-            <p className="modal-container__paragraph">{country.subregion}</p>
+            {country.subregion ? (
+              <p className="modal-container__paragraph">{country.subregion}</p>
+            ) : (
+              <p className="modal-container__paragraph">N/A</p>
+            )}
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Capital:</span>
-            <p className="modal-container__paragraph">{country.capital[0]}</p>
+            {country.capital ? (
+              <p className="modal-container__paragraph">{country.capital[0]}</p>
+            ) : (
+              <p className="modal-container__paragraph">N/A</p>
+            )}
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">
               Top Level Domain:
             </span>
-            <p className="modal-container__paragraph">{country.tld[0]}</p>
+            {country.tld[0] ? (
+              <p className="modal-container__paragraph">{country.tld[0]}</p>
+            ) : (
+              <p className="modal-container__paragraph">N/A</p>
+            )}
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Currencies:</span>
@@ -59,6 +79,17 @@ function Modal({ country, onSaveClose }) {
             <span className="modal-container__description">Languages:</span>
             <p className="modal-container__paragraph">{}</p>
           </div>
+        </div>
+        <div className="modal-container__border-container">
+          <p className="modal-container__name-description">Border Nations:</p>
+
+          {country.borders ? (
+            country.borders.map((border) => {
+              return <p className="modal-container__border-name">{border}</p>;
+            })
+          ) : (
+            <p className="modal-container__border-name">N/A</p>
+          )}
         </div>
       </div>
     </div>
