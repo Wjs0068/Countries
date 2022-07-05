@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Modal.css";
 
-function Modal() {
-  const [open, setOpen] = useState(false);
-
-  return <div className="modal-container">What</div>;
+function Modal({ country }) {
+  return <div className="modal-container">{country.name}</div>;
 }
 
 export default Modal;

@@ -10,11 +10,11 @@
   gap: 1rem;
   cursor: pointer;
 }
-.nav__button__container--icon {
+.nav__button__container__icon {
   font-size: 1.8rem;
   font-family: "Raleway", sans-serif;
 }
-.nav__button__container--para {
+.nav__button__container__para {
   font-size: 1.8rem;
   font-family: "Raleway", sans-serif;
 }

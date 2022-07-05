@@ -9,6 +9,7 @@ import Modal from "./components/Modal/Modal.js";
 function App() {
   const [region, setRegion] = useState("");
   const [search, setSearch] = useState("");
+  const [country, setCountry] = useState("");
 
   const saveRegionData = (enteredRegion) => {
     const regionData = enteredRegion;
@@ -22,6 +23,12 @@ function App() {
     console.log(searchData);
   };
 
+  const saveCountryData = (enteredCountry) => {
+    const countryData = enteredCountry;
+    setCountry(countryData);
+    console.log(countryData);
+  };
+
   return (
     <div className="App">
       <Nav />
@@ -30,8 +37,12 @@ function App() {
         <Filter onSaveRegion={saveRegionData} />
       </div>
 
-      <Countries search={search} region={region} />
-      <Modal />
+      <Countries
+        onSaveCountry={saveCountryData}
+        search={search}
+        region={region}
+      />
+      <Modal country={country} />
     </div>
   );
 }
