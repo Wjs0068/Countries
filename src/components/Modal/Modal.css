@@ -77,11 +77,16 @@
 
 .modal-container__category {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
 }
 
+.modal-container__language {
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+}
 .modal-container__description {
   font-family: "Raleway", sans-serif;
   color: white;
@@ -92,15 +97,16 @@
   font-family: "Raleway", sans-serif;
   color: black;
   font-size: 1.4rem;
+  inline-size: 150px;
+  overflow-wrap: break-word;
 }
 
 .modal-container__border-container {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: left;
   margin-top: 1.4rem;
-  max-width: 40rem;
 }
 
 .modal-container__name-description {
@@ -116,4 +122,12 @@
   font-family: "Raleway", sans-serif;
   color: white;
   padding: 0.4rem;
+}
+
+.modal-container__border-nations {
+  max-width: 41rem;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
 }

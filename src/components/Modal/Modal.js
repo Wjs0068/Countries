@@ -3,6 +3,31 @@ import "./Modal.css";
 import { FaArrowLeft } from "react-icons/fa";
 
 function Modal({ country, onSaveClose }) {
+  var currencyName = [];
+  var languages = [];
+  var nativeName;
+
+  if (country.currencies) {
+    for (const [value] of Object.entries(country.currencies)) {
+      console.log(`${value.name}`);
+      currencyName.push(value.name);
+    }
+  }
+
+  if (country.languages) {
+    for (const [value] of Object.entries(country.languages)) {
+      console.log(`${value}`);
+      languages.push(value);
+    }
+  }
+
+  if (country.name.nativeName) {
+    for (const [value] of Object.entries(country.name.nativeName)) {
+      console.log(`${value.official}`);
+      nativeName = value.official;
+    }
+  }
+
   return (
     <div className="modal-container">
       <button
@@ -27,7 +52,11 @@ function Modal({ country, onSaveClose }) {
         <div className="modal-container__grid-for-elements">
           <div className="modal-container__category">
             <span className="modal-container__description">Native Name:</span>
-            <p className="modal-container__paragraph"></p>
+            {nativeName ? (
+              <p className="modal-container__paragraph">{nativeName}</p>
+            ) : (
+              <p className="modal-container__paragraph">N/A</p>
+            )}
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Population:</span>
@@ -73,23 +102,44 @@ function Modal({ country, onSaveClose }) {
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Currencies:</span>
-            <p className="modal-container__paragraph"></p>
+            <div>
+              {currencyName ? (
+                currencyName.map((currency) => {
+                  return (
+                    <p className="modal-container__language">{currency}</p>
+                  );
+                })
+              ) : (
+                <p className="modal-container__language">N/A</p>
+              )}
+            </div>
           </div>
           <div className="modal-container__category">
             <span className="modal-container__description">Languages:</span>
-            <p className="modal-container__paragraph">{}</p>
+            <div>
+              {languages ? (
+                languages.map((language) => {
+                  return (
+                    <p className="modal-container__language">{language}</p>
+                  );
+                })
+              ) : (
+                <p className="modal-container__language">N/A</p>
+              )}
+            </div>
           </div>
         </div>
         <div className="modal-container__border-container">
           <p className="modal-container__name-description">Border Nations:</p>
-
-          {country.borders ? (
-            country.borders.map((border) => {
-              return <p className="modal-container__border-name">{border}</p>;
-            })
-          ) : (
-            <p className="modal-container__border-name">N/A</p>
-          )}
+          <div className="modal-container__border-nations">
+            {country.borders ? (
+              country.borders.map((border) => {
+                return <p className="modal-container__border-name">{border}</p>;
+              })
+            ) : (
+              <p className="modal-container__border-name">N/A</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
