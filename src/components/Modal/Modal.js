@@ -30,22 +30,24 @@ function Modal({ country, onSaveClose }) {
 
   return (
     <div className="modal-container">
-      <button
-        onClick={() => {
-          onSaveClose(false);
-        }}
-        className="modal-container__back-button"
-      >
-        <FaArrowLeft className="modal-container__back-icon" />
-        <span className="modal-container__back">Back</span>
-      </button>
-      <div></div>
-
-      <img
-        className="modal-container__img"
-        src={country.flags.png}
-        alt="flag"
-      />
+      <div className="modal-container__top-left">
+        <button
+          onClick={() => {
+            onSaveClose(false);
+          }}
+          className="modal-container__back-button"
+        >
+          <FaArrowLeft className="modal-container__back-icon" />
+          <span className="modal-container__back">Back</span>
+        </button>
+      </div>
+      <div className="modal-container__bottom-left">
+        <img
+          className="modal-container__img"
+          src={country.flags.png}
+          alt="flag"
+        />
+      </div>
 
       <div className="modal-container__right-side-container">
         <h3 className="modal-container__header-three">{country.name.common}</h3>

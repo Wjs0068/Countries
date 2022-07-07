@@ -45,4 +45,28 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  position: sticky;
+  top: 47px;
+  z-index: 20;
+
+  height: 10rem;
+
+  background-color: #eee;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .App__filter--container {
+    flex-direction: column;
+    align-items: flex-start;
+    top: 40px;
+    gap: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 15rem;
+  }
 }

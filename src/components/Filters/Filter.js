@@ -5,7 +5,6 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 function Filter(props) {
-  // const [region, setRegion] = useState("none");
   var region;
 
   const handleChange = (event) => {
@@ -17,34 +16,32 @@ function Filter(props) {
   };
 
   return (
-    <div>
-      <FormControl
-        sx={{
-          m: 1,
-          minWidth: 150,
-          backgroundColor: "white",
-          marginTop: "2rem",
-        }}
+    <FormControl
+      sx={{
+        m: 1,
+        minWidth: 150,
+        backgroundColor: "white",
+        margin: 0,
+      }}
+    >
+      <InputLabel id="demo-simple-select-autowidth-label">
+        Filter By Region
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-autowidth-label"
+        id="demo-simple-select-autowidth"
+        value={region}
+        onChange={handleChange}
+        label="Age"
       >
-        <InputLabel id="demo-simple-select-autowidth-label">
-          Filter By Region
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth"
-          value={region}
-          onChange={handleChange}
-          label="Age"
-        >
-          <MenuItem value="All">All</MenuItem>
-          <MenuItem value="Africa">Africa</MenuItem>
-          <MenuItem value="Americas">Americas</MenuItem>
-          <MenuItem value="Asia">Asia</MenuItem>
-          <MenuItem value="Europe">Europe</MenuItem>
-          <MenuItem value="Oceania">Oceania</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
+        <MenuItem value="All">All</MenuItem>
+        <MenuItem value="Africa">Africa</MenuItem>
+        <MenuItem value="Americas">Americas</MenuItem>
+        <MenuItem value="Asia">Asia</MenuItem>
+        <MenuItem value="Europe">Europe</MenuItem>
+        <MenuItem value="Oceania">Oceania</MenuItem>
+      </Select>
+    </FormControl>
   );
 }
 

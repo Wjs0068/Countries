@@ -47,6 +47,7 @@ function Countries({ region, search, onSaveCountry, onSaveOpen }) {
                 <div
                   onClick={() => {
                     chosenCountry = country;
+                    
                     onSaveCountry(chosenCountry);
                     console.log(chosenCountry);
                     onSaveOpen(true);

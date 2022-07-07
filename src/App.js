@@ -34,6 +34,7 @@ function App() {
   const openedData = (clickedCountry) => {
     const openData = clickedCountry;
     document.body.classList.add("modal-open");
+    document.querySelector(".App__filter--container").classList.add("none");
     setOpened(openData);
     console.log(openData);
   };
@@ -41,6 +42,7 @@ function App() {
   const closedData = (back) => {
     const closeData = back;
     document.body.classList.remove("modal-open");
+    document.querySelector(".App__filter--container").classList.remove("none");
     setOpened(back);
     console.log(closeData);
   };
@@ -50,6 +52,7 @@ function App() {
       <Nav />
 
       {opened ? <Modal onSaveClose={closedData} country={country} /> : <></>}
+
       <div className="App__filter--container">
         <Search onSaveSearch={saveSearchData} />
         <Filter onSaveRegion={saveRegionData} />
