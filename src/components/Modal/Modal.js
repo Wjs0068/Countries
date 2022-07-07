@@ -8,21 +8,21 @@ function Modal({ country, onSaveClose }) {
   var nativeName;
 
   if (country.currencies) {
-    for (const [value] of Object.entries(country.currencies)) {
+    for (const [key, value] of Object.entries(country.currencies)) {
       console.log(`${value.name}`);
       currencyName.push(value.name);
     }
   }
 
   if (country.languages) {
-    for (const [value] of Object.entries(country.languages)) {
+    for (const [key, value] of Object.entries(country.languages)) {
       console.log(`${value}`);
       languages.push(value);
     }
   }
 
   if (country.name.nativeName) {
-    for (const [value] of Object.entries(country.name.nativeName)) {
+    for (const [key, value] of Object.entries(country.name.nativeName)) {
       console.log(`${value.official}`);
       nativeName = value.official;
     }

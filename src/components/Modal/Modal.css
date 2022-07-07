@@ -97,8 +97,6 @@
   font-family: "Raleway", sans-serif;
   color: black;
   font-size: 1.4rem;
-  inline-size: 150px;
-  overflow-wrap: break-word;
 }
 
 .modal-container__border-container {

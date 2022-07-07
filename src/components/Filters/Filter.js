@@ -10,6 +10,8 @@ function Filter(props) {
 
   const handleChange = (event) => {
     console.log(event.target.value);
+    if (event.target.value === "All") {
+    }
     region = event.target.value;
     props.onSaveRegion(region);
   };
@@ -34,6 +36,7 @@ function Filter(props) {
           onChange={handleChange}
           label="Age"
         >
+          <MenuItem value="All">All</MenuItem>
           <MenuItem value="Africa">Africa</MenuItem>
           <MenuItem value="Americas">Americas</MenuItem>
           <MenuItem value="Asia">Asia</MenuItem>

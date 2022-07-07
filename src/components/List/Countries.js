@@ -4,7 +4,7 @@ import "./Countries.css";
 
 function Countries({ region, search, onSaveCountry, onSaveOpen }) {
   const [countries, setCountries] = useState([]);
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   var chosenCountry;
 
   useEffect(() => {
@@ -32,10 +32,14 @@ function Countries({ region, search, onSaveCountry, onSaveOpen }) {
           })
           .filter((countries) => {
             const lowerCase = search.toLowerCase();
-            return (
-              countries.region.includes(region) &&
-              countries.name.common.toLowerCase().includes(lowerCase)
-            );
+            if (region === "All") {
+              return countries.name.common.toLowerCase().includes(lowerCase);
+            } else {
+              return (
+                countries.region.includes(region) &&
+                countries.name.common.toLowerCase().includes(lowerCase)
+              );
+            }
           })
           .map((country, index) => {
             return (
