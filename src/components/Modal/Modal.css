@@ -1,7 +1,7 @@
 .modal-container {
   z-index: 10;
   background-color: white;
-  position: sticky;
+  /* position: sticky; */
   top: 47px;
   height: 100%;
   position: fixed;
@@ -162,4 +162,8 @@
 }
 
 @media (max-width: 1100px) {
+  .modal-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
