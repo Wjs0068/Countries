@@ -16,7 +16,6 @@ function App() {
   const saveRegionData = (enteredRegion) => {
     const regionData = enteredRegion;
     setRegion(regionData);
-    console.log(regionData);
   };
 
   const saveSearchData = (enteredData) => {
