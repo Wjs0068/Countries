@@ -4,15 +4,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function Filter(props) {
+function Filter({ onSaveRegion }) {
   var region;
 
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    if (event.target.value === "All") {
-    }
-    region = event.target.value;
-    props.onSaveRegion(region);
+  const handleChange = () => {
+    onSaveRegion(region);
   };
 
   return (
@@ -28,10 +24,17 @@ function Filter(props) {
         Filter By Region
       </InputLabel>
       <Select
+        inputProps={{ "data-testid": "input-for-filter" }}
         labelId="demo-simple-select-autowidth-label"
         id="demo-simple-select-autowidth"
         value={region}
-        onChange={handleChange}
+        onChange={(event) => {
+          console.log(event.target.value);
+          if (event.target.value === "All") {
+          }
+          region = event.target.value;
+          handleChange();
+        }}
         label="Age"
       >
         <MenuItem value="All">All</MenuItem>

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 
 import Nav from "./components/Nav/Nav.js";
 import Countries from "./components/List/Countries.js";
-import Filter from "./components/Filters/Filter.js";
-import Search from "./components/Filters/Search.js";
+import Filter from "./components/Filter/Filter.js";
+import Search from "./components/Search/Search.js";
 import Modal from "./components/Modal/Modal.js";
 
 function App() {
