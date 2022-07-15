@@ -7,6 +7,9 @@ function Countries({ region, search, onSaveCountry, onSaveOpen }) {
   // const [open, setOpen] = useState(false);
   var chosenCountry;
 
+  //Countries Context
+  //Zustand
+
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((countries) => {
       setCountries(countries.data);
@@ -47,7 +50,7 @@ function Countries({ region, search, onSaveCountry, onSaveOpen }) {
                 <div
                   onClick={() => {
                     chosenCountry = country;
-                    
+
                     onSaveCountry(chosenCountry);
                     console.log(chosenCountry);
                     onSaveOpen(true);

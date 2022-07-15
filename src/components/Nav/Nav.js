@@ -1,12 +1,18 @@
 import React from "react";
 import "./Nav.css";
 
+export const reload = {
+  reload() {
+    window.location.reload();
+    return true;
+  },
+};
 function Nav() {
   return (
     <nav className="nav">
       <button
         onClick={() => {
-          window.location.reload();
+          reload.reload();
         }}
         className="nav__header"
       >
