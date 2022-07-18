@@ -45,7 +45,6 @@ function App() {
     setOpened(back);
     console.log(closeData);
   };
-
   return (
     <div className="App">
       <Nav />

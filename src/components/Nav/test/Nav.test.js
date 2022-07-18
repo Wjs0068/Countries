@@ -3,6 +3,8 @@ import userEvent from "@testing-library/user-event";
 import Nav from "../Nav.js";
 import { reload } from "../Nav.js";
 
+
+
 describe("Navigation Test", () => {
   it("should call the reload function when the title is pressed", () => {
     render(<Nav />);

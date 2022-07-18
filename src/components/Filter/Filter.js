@@ -5,9 +5,13 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 function Filter({ onSaveRegion }) {
-  var region;
+  let region;
 
-  const handleChange = () => {
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    if (event.target.value === "All") {
+    }
+    region = event.target.value;
     onSaveRegion(region);
   };
 
@@ -29,11 +33,7 @@ function Filter({ onSaveRegion }) {
         id="demo-simple-select-autowidth"
         value={region}
         onChange={(event) => {
-          console.log(event.target.value);
-          if (event.target.value === "All") {
-          }
-          region = event.target.value;
-          handleChange();
+          handleChange(event);
         }}
         label="Age"
       >
