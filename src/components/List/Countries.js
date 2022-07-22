@@ -61,7 +61,7 @@ function Countries({ region, search, onSaveCountry, onSaveOpen }) {
                   <img
                     className="card-container__image"
                     src={country.flags.png}
-                    alt="Pictures of all the country flags"
+                    alt="wait"
                   />
                   <h3 className="card-container__name">
                     {country.name.common}
